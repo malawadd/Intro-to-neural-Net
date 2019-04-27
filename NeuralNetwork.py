@@ -1,16 +1,16 @@
 import numpy as np
 
 def sigmoid(x):
-  # Sigmoid activation function: f(x) = 1 / (1 + e^(-x))
+  #  f(x) = 1 / (1 + e^(-x)) دالة السيجمويد
   return 1 / (1 + np.exp(-x))
 
 def deriv_sigmoid(x):
-  # Derivative of sigmoid: f'(x) = f(x) * (1 - f(x))
+  # f'(x) = f(x) * (1 - f(x)) : مشتقة السيجمويد
   fx = sigmoid(x)
   return fx * (1 - fx)
 
 def mse_loss(y_true, y_pred):
-  # y_true and y_pred are numpy arrays of the same length.
+  # بنفس الطول arrays عبارة عن  y_true و  y_pred
   return ((y_true - y_pred) ** 2).mean()
 
 class OurNeuralNetwork:
@@ -36,7 +36,7 @@ class OurNeuralNetwork:
     self.b3 = np.random.normal()
 
   def feedforward(self, x):
-    # x is a numpy array with 2 elements.
+    # لها عنصرين array هي  x
     h1 = sigmoid(self.w1 * x[0] + self.w2 * x[1] + self.b1)
     h2 = sigmoid(self.w3 * x[0] + self.w4 * x[1] + self.b2)
     o1 = sigmoid(self.w5 * h1 + self.w6 * h2 + self.b3)
@@ -44,12 +44,12 @@ class OurNeuralNetwork:
 
   def train(self, data, all_y_trues):
     '''
-    - data is a (n x 2) numpy array, n = # of samples in the dataset.
-    - all_y_trues is a numpy array with n elements.
-      Elements in all_y_trues correspond to those in data.
+   تساوي عدد الأمثلة n و  (n x 2) حجمها  numpy array البيانات هي
+   عناصر   n لها  numpy array هي all_y_trues
+    تمثل البيانات  all_y_trues العناصر في
     '''
     learn_rate = 0.1
-    epochs = 1000 # number of times to loop through the entire dataset
+    epochs = 1000 # عدد الدورات خلال البيانات
 
     for epoch in range(epochs):
       for x, y_true in zip(data, all_y_trues):
