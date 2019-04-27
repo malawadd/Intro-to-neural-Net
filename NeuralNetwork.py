@@ -124,3 +124,8 @@ all_y_trues = np.array([
 # تدريب الشبكة العصبية
 network = OurNeuralNetwork()
 network.train(data, all_y_trues)
+# القيام بالتنبؤ
+Hala = np.array([-7, -3]) # 65 kg, 163 cm
+Khaled = np.array([20, 2])  # 92 kg, 168 cm
+print("Hala: %.3f" % network.feedforward(Hala)) # 0.951 - F
+print("Khaled: %.3f" % network.feedforward(Khaled)) # 0.039 - M
