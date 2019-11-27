@@ -4,5 +4,6 @@
 
 الكود المستخدم في مقالتي في المدونه
 
-http://malawad.com/?p=208
+[رابط المقالة](http://malawad.com/blog/intro-to-neural-networks/?utm_source=Arabic&utm_medium=github&utm_campaign=Mohammed_alawad)
+
 
